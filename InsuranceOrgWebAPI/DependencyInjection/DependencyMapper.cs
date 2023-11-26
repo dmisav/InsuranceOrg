@@ -6,6 +6,6 @@ public static class DependencyMapper
 {
     public static void RegisterDependencies(WebApplicationBuilder builder)
     {
-        builder.Services.AddScoped<ICoverageProviders, CoverageProviderRepository>();
+        builder.Services.AddScoped<ICoverageProvider, CoverageProviderRepository>();
     }
 }

@@ -2,7 +2,7 @@ using InsuranceOrgWebAPI.Models;
 
 namespace InsuranceOrgWebAPI.DataProviders;
 
-public class CoverageProviderRepository: ICoverageProviders
+public class CoverageProviderRepository: ICoverageProvider
 {
     public IEnumerable<HealthCoverageModel>  GetHealthCoverages()
     {
@@ -32,7 +32,7 @@ public class CoverageProviderRepository: ICoverageProviders
         };
     }
 
-    public IEnumerable<DentalCoverageModel> GetDentalCoverageModel()
+    public IEnumerable<DentalCoverageModel> GetDentalCoverages()
     {
         return new List<DentalCoverageModel>()
         {

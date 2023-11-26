@@ -2,8 +2,8 @@ using InsuranceOrgWebAPI.Models;
 
 namespace InsuranceOrgWebAPI.DataProviders;
 
-public interface ICoverageProviders
+public interface ICoverageProvider
 {
     public IEnumerable<HealthCoverageModel> GetHealthCoverages();
-    public IEnumerable<DentalCoverageModel> GetDentalCoverageModel();
+    public IEnumerable<DentalCoverageModel> GetDentalCoverages();
 }

@@ -11,6 +11,14 @@ builder.Services.AddSwaggerGen();
 DependencyMapper.RegisterDependencies(builder);
 var app = builder.Build();
 
+//TO DO
+/*
+ * Add automapper
+ * add JWT authentication
+ * Add UI project
+ * 
+ */
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
