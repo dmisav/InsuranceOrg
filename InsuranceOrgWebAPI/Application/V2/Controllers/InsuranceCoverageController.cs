@@ -7,8 +7,6 @@ namespace InsuranceOrgWebAPI.Application.Controllers;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
-[ApiVersion("1.0")]
-[ApiVersion("2.0")]
 public class InsuranceCoverageController: ControllerBase
 {
     private readonly ICoverageProvider _coverageProvider;
@@ -28,17 +26,7 @@ public class InsuranceCoverageController: ControllerBase
     
     [HttpGet]
     [ActionName("GetDentalCoverage")]
-    [MapToApiVersion("1.0")]
-    public async Task<IEnumerable<DentalCoverageViewModel>> GetDentalCoverageV1()
-    {
-        var coverages = await _coverageProvider.GetDentalCoveragesAsync();
-        return _mapper.Map<IEnumerable<DentalCoverageViewModel>>(coverages);
-    }
-    
-    [HttpGet]
-    [ActionName("GetDentalCoverage")]
-    [MapToApiVersion("2.0")]
-    public async Task<IEnumerable<DentalCoverageViewModel>> GetDentalCoverageV2()
+    public async Task<IEnumerable<DentalCoverageViewModel>> GetDentalCoverage()
     {
         var coverages = await _coverageProvider.GetDentalCoveragesAsync();
         return _mapper.Map<IEnumerable<DentalCoverageViewModel>>(coverages);
@@ -54,7 +42,6 @@ public class InsuranceCoverageController: ControllerBase
     */
     [HttpGet]
     [ActionName("GetHealthCoverage")]
-    [MapToApiVersion("1.0")]
     public async Task<IEnumerable<HealthCoverageViewModel>> GetHealthCoverage()
     {
         var coverages = await _coverageProvider.GetHealthCoveragesAsync();
@@ -63,7 +50,6 @@ public class InsuranceCoverageController: ControllerBase
     
     [HttpGet]
     [ActionName("GetMimicException")]
-    [MapToApiVersion("1.0")]
     public OkResult GetMimicException()
     {
         throw new Exception("Oh no!");

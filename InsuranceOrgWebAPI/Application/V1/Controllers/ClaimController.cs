@@ -1,8 +1,9 @@
 using InsuranceOrgWebAPI.Application.CustomActionFilters;
 using InsuranceOrgWebAPI.Application.DTO;
+using InsuranceOrgWebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InsuranceOrgWebAPI.Application.Controllers;
+namespace InsuranceOrgWebAPI.Application.V1.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]/[action]")]
@@ -18,7 +19,7 @@ public class ClaimController : ControllerBase
     [HttpPost]
     [ControllerValidateModel]
     [ActionName("PostClaim")]
-    public IActionResult PostClaim([FromBody] ClaimViewModel claim)
+    public IActionResult PostClaim([FromBody] ClaimViewModelV1 claim)
     {
         return Ok();
     }
@@ -27,7 +28,16 @@ public class ClaimController : ControllerBase
     [ActionName("GetProcessedClaims")]
     public IActionResult GetProcessedClaims()
     {
-        return Ok();
+        var res = new ClaimViewModelV1()
+        {
+            Amount = 10,
+            Date = DateTime.Now,
+            Code = "xyz",
+            IssuerName = "me",
+            Type = ClaimType.Health,
+            OtherInfo = "blah"
+        };
+        return Ok(res);
     }
 
     [HttpGet]

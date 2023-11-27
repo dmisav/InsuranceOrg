@@ -10,6 +10,8 @@
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="12.0.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
@@ -21,11 +23,17 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Application\V1\" />
       <Folder Include="Data\" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Remove="Application\Controllers\WeatherForecastController.cs" />
+      <Compile Remove="Data\DataProviders\Models\Domain\WeatherForecast.cs" />
+      <Compile Remove="Application\V1\Controllers\WeatherForecastController.cs" />
+      <Compile Remove="Application\Controllers\ClaimController.cs" />
+      <Compile Remove="Application\V1\Controllers\InsuranceCoverageController.cs" />
+      <Compile Remove="Application\V2\Controllers\InsuranceCoverageController.cs" />
     </ItemGroup>
 
 </Project>
