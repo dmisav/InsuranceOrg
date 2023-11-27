@@ -1,11 +1,13 @@
 using AutoMapper;
 using InsuranceOrgWebAPI.DataProviders;
 using InsuranceOrgWebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceOrgWebAPI.Application.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/[controller]/[action]")]
 [ApiVersion("1.0")]
 [ApiVersion("2.0")]

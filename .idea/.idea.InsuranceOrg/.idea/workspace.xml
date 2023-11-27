@@ -17,6 +17,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/InsuranceCoverageController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/WeatherForecastController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6dd60ae9e472467f81db6721f07c00dbc400/27/21b48b1b/BadRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8c1985b467e64cba84d5c1c02a40b8c210200/bd/f2cf1af6/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c3d7069ce34046dbb5975268b37372685c00/db/fb1afe09/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/03ac07f794a71f728baff7e267a90dee13380a2532e2062c51debe4571217a/ILoggerT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1dad7066d59e42d92476c5ad1180c2b63352d32689dd3d3be2bb2aa26b3bea5/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/327c7021d162488365d0174111f98fe6e72663a8fed3f4c6e4de50a42f253e/ExceptionHandlerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701030015512</updated>
-      <workItem from="1701030016765" duration="21076000" />
+      <workItem from="1701030016765" duration="25538000" />
     </task>
     <servers />
   </component>

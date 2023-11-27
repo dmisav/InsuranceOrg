@@ -1,9 +1,14 @@
+using System.Text;
 using InsuranceOrgWebAPI.Application.Mappings;
 using InsuranceOrgWebAPI.Common;
+using InsuranceOrgWebAPI.Common.Authorization;
 using InsuranceOrgWebAPI.Common.DependencyInjection;
 using InsuranceOrgWebAPI.Common.Middlewares;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +36,24 @@ builder.Services.ConfigureOptions<ConfingureSwaggerOptions>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 DependencyMapper.RegisterDependencies(builder);
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    });
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddDefaultTokenProviders()
+    .AddUserStore<InMemoryUserStore<IdentityUser>>()
+    .AddRoleStore<InMemoryRoleStore<IdentityRole>>();
+
+
 var app = builder.Build();
 
 var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
@@ -53,13 +76,10 @@ if (app.Environment.IsDevelopment())
         }
     });
 }
-
 app.UseMiddleware<ActionExceptionHandlerMiddleware>();
-
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
