@@ -1,62 +1,92 @@
+using InsuranceOrgWebAPI.DataProviders;
 using InsuranceOrgWebAPI.Models;
 
-namespace InsuranceOrgWebAPI.DataProviders;
-
-public class CoverageProviderRepository: ICoverageProvider
+namespace InsuranceOrgWebAPI.Data.DataProviders
 {
-    public IEnumerable<HealthCoverageModel>  GetHealthCoverages()
+    public class CoverageProviderRepository: ICoverageProvider
     {
-        return new List<HealthCoverageModel>()
+        public async Task<IEnumerable<HealthCoverageModel>> GetHealthCoveragesAsync()
         {
-            new HealthCoverageModel()
-            {
-                CustomerId = new Guid(),
-                ChiropractorAllowanceAmunt = 100,
-                MassageAllowanceAmount = 20,
-                MaxCoverageAmount = 10
-            },
-            new HealthCoverageModel()
-            {
-                CustomerId = new Guid(),
-                ChiropractorAllowanceAmunt = 30,
-                MassageAllowanceAmount = 40,
-                MaxCoverageAmount = 9
-            },
-            new HealthCoverageModel()
-            {
-            CustomerId = new Guid(),
-            ChiropractorAllowanceAmunt = 80,
-            MassageAllowanceAmount = 20,
-            MaxCoverageAmount = 11
+            // let's imagine we are calling real storage in async way :)
+            return HealthMockCollection;
         }
-        };
-    }
 
-    public IEnumerable<DentalCoverageModel> GetDentalCoverages()
-    {
-        return new List<DentalCoverageModel>()
+        public async Task<IEnumerable<DentalCoverageModel>> GetDentalCoveragesAsync()
         {
-            new DentalCoverageModel()
+            // let's imagine we are calling real storage in async way :)
+            return DentalMockCollection;
+        }
+
+        public IEnumerable<HealthCoverageModel>  GetHealthCoverages()
+        {
+            return HealthMockCollection;
+        }
+
+        public IEnumerable<DentalCoverageModel> GetDentalCoverages()
+        {
+            return DentalMockCollection;
+        }
+    
+        private IEnumerable<HealthCoverageModel> HealthMockCollection
+        {
+            get
             {
-                CustomerId = new Guid(),
-                DentalCleaningAmount = 100,
-                OrthodentalAmount = 20,
-                MaxCoverageAmount = 10
-            },
-            new DentalCoverageModel()
-            {
-                CustomerId = new Guid(),
-                DentalCleaningAmount = 30,
-                OrthodentalAmount = 40,
-                MaxCoverageAmount = 9
-            },
-            new DentalCoverageModel()
-            {
-                CustomerId = new Guid(),
-                DentalCleaningAmount = 80,
-                OrthodentalAmount = 20,
-                MaxCoverageAmount = 11
+                return new List<HealthCoverageModel>()
+                {
+                    new HealthCoverageModel()
+                    {
+                        CustomerId = new Guid(),
+                        ChiropractorAllowanceAmunt = 100,
+                        MassageAllowanceAmount = 20,
+                        MaxCoverageAmount = 10
+                    },
+                    new HealthCoverageModel()
+                    {
+                        CustomerId = new Guid(),
+                        ChiropractorAllowanceAmunt = 30,
+                        MassageAllowanceAmount = 40,
+                        MaxCoverageAmount = 9
+                    },
+                    new HealthCoverageModel()
+                    {
+                        CustomerId = new Guid(),
+                        ChiropractorAllowanceAmunt = 80,
+                        MassageAllowanceAmount = 20,
+                        MaxCoverageAmount = 11
+                    }
+                };
             }
-        };
+        }
+
+        private IEnumerable<DentalCoverageModel> DentalMockCollection
+        {
+            get
+            {
+                return new List<DentalCoverageModel>()
+                {
+                    new DentalCoverageModel()
+                    {
+                        CustomerId = new Guid(),
+                        DentalCleaningAmount = 100,
+                        OrthodentalAmount = 20,
+                        MaxCoverageAmount = 10
+                    },
+                    new DentalCoverageModel()
+                    {
+                        CustomerId = new Guid(),
+                        DentalCleaningAmount = 30,
+                        OrthodentalAmount = 40,
+                        MaxCoverageAmount = 9
+                    },
+                    new DentalCoverageModel()
+                    {
+                        CustomerId = new Guid(),
+                        DentalCleaningAmount = 80,
+                        OrthodentalAmount = 20,
+                        MaxCoverageAmount = 11
+                    }
+                };
+            }
+        }
     }
 }

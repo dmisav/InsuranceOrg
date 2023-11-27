@@ -1,5 +1,5 @@
 using InsuranceOrgWebAPI.Application.Mappings;
-using InsuranceOrgWebAPI.DependencyInjection;
+using InsuranceOrgWebAPI.Common.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

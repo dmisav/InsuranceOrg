@@ -1,6 +1,7 @@
+using InsuranceOrgWebAPI.Data.DataProviders;
 using InsuranceOrgWebAPI.DataProviders;
 
-namespace InsuranceOrgWebAPI.DependencyInjection;
+namespace InsuranceOrgWebAPI.Common.DependencyInjection;
 
 public static class DependencyMapper
 {

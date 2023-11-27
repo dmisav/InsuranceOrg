@@ -26,9 +26,9 @@ public class InsuranceCoverageController: ControllerBase
     
     [HttpGet]
     [ActionName("GetDentalCoverage")]
-    public IEnumerable<DentalCoverageViewModel> GetDentalCoverage()
+    public async Task<IEnumerable<DentalCoverageViewModel>> GetDentalCoverage()
     {
-        var coverages = _coverageProvider.GetDentalCoverages();
+        var coverages = await _coverageProvider.GetDentalCoveragesAsync();
         return _mapper.Map<IEnumerable<DentalCoverageViewModel>>(coverages);
     }
     /*
@@ -42,10 +42,9 @@ public class InsuranceCoverageController: ControllerBase
     */
     [HttpGet]
     [ActionName("GetHealthCoverage")]
-    public IActionResult GetHealthCoverage()
+    public async Task<IEnumerable<HealthCoverageViewModel>> GetHealthCoverage()
     {
-        //TO DO add automapper
-        _coverageProvider.GetHealthCoverages();
-        return Ok();
+        var coverages = await _coverageProvider.GetHealthCoveragesAsync();
+        return _mapper.Map<IEnumerable<HealthCoverageViewModel>>(coverages);
     }
 }

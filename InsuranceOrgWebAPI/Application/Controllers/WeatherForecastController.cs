@@ -1,7 +1,6 @@
-using InsuranceOrgWebAPI.DataProviders;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InsuranceOrgWebAPI.Controllers;
+namespace InsuranceOrgWebAPI.Application.Controllers;
 
 [ApiController]
 [Route("[controller]")]

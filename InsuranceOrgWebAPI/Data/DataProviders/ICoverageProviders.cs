@@ -4,6 +4,6 @@ namespace InsuranceOrgWebAPI.DataProviders;
 
 public interface ICoverageProvider
 {
-    public IEnumerable<HealthCoverageModel> GetHealthCoverages();
-    public IEnumerable<DentalCoverageModel> GetDentalCoverages();
+    public Task<IEnumerable<HealthCoverageModel>> GetHealthCoveragesAsync();
+    public Task<IEnumerable<DentalCoverageModel>> GetDentalCoveragesAsync();
 }
