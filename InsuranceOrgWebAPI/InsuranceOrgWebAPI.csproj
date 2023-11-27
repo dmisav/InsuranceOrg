@@ -21,8 +21,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Common\" />
       <Folder Include="Data\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Application\Controllers\WeatherForecastController.cs" />
     </ItemGroup>
 
 </Project>

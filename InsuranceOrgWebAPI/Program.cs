@@ -1,5 +1,7 @@
 using InsuranceOrgWebAPI.Application.Mappings;
 using InsuranceOrgWebAPI.Common.DependencyInjection;
+using InsuranceOrgWebAPI.Common.Middlewares;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,15 +14,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 DependencyMapper.RegisterDependencies(builder);
 
-
 var app = builder.Build();
 
 //TO DO
 /*
- * Add automapper
  * add JWT authentication
  * Add UI project
- * 
  */
 
 // Configure the HTTP request pipeline.
@@ -29,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ActionExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 

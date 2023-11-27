@@ -47,4 +47,11 @@ public class InsuranceCoverageController: ControllerBase
         var coverages = await _coverageProvider.GetHealthCoveragesAsync();
         return _mapper.Map<IEnumerable<HealthCoverageViewModel>>(coverages);
     }
+    
+    [HttpGet]
+    [ActionName("GetMimicException")]
+    public OkResult GetMimicException()
+    {
+        throw new Exception("Oh no!");
+    }
 }
