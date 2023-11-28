@@ -1,5 +1,6 @@
 using InsuranceOrgWebAPI.Application.CustomActionFilters;
 using InsuranceOrgWebAPI.Application.DTO;
+using InsuranceOrgWebAPI.Data.DataProviders;
 using InsuranceOrgWebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +11,12 @@ namespace InsuranceOrgWebAPI.Application.V1.Controllers;
 public class ClaimController : ControllerBase
 {
     private readonly ILogger<ClaimController> _logger;
+    private readonly IClaimService _claimService;
 
-    public ClaimController(ILogger<ClaimController> logger)
+    public ClaimController(ILogger<ClaimController> logger, IClaimService claimService)
     {
         _logger = logger;
+        _claimService = claimService;
     }
 
     [HttpPost]
@@ -21,6 +24,7 @@ public class ClaimController : ControllerBase
     [ActionName("PostClaim")]
     public IActionResult PostClaim([FromBody] ClaimViewModelV1 claim)
     {
+        _claimService.ProcessClaim(claim);
         return Ok();
     }
 

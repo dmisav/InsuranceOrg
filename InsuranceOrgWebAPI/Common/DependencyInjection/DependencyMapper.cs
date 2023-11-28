@@ -8,5 +8,6 @@ public static class DependencyMapper
     public static void RegisterDependencies(WebApplicationBuilder builder)
     {
         builder.Services.AddSingleton<ICoverageProvider, CoverageProviderRepository>();
+        builder.Services.AddScoped<IClaimService, ClaimService>();
     }
 }

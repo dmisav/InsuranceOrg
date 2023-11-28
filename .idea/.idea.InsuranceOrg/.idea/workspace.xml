@@ -15,6 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/InsuranceOrg.Tests/Tests/ClaimControllerTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/InsuranceCoverageController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/WeatherForecastController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6dd60ae9e472467f81db6721f07c00dbc400/27/21b48b1b/BadRequest.cs" root0="SKIP_HIGHLIGHTING" />
@@ -115,7 +116,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701030015512</updated>
-      <workItem from="1701030016765" duration="25538000" />
+      <workItem from="1701030016765" duration="28659000" />
     </task>
     <servers />
   </component>
@@ -124,5 +125,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/ClaimController.cs</url>
+          <line>27</line>
+          <properties documentPath="$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/ClaimController.cs" initialLine="23" containingFunctionPresentation="Method 'PostClaim'">
+            <startOffsets>
+              <option value="846" />
+            </startOffsets>
+            <endOffsets>
+              <option value="858" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
