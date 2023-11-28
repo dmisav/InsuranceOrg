@@ -1,6 +1,6 @@
 # InsuranceOrg
 
-Net 7
+Net 8
 
 Web API
 
