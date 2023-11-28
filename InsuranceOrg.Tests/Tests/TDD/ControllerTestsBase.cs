@@ -1,4 +1,4 @@
-namespace InsuranceOrg.Tests;
+namespace InsuranceOrg.Tests.TDD;
 
 public class ControllerTestsBase
 {

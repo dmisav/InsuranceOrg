@@ -1,0 +1,19 @@
+{
+  "featureFiles": [
+    "../Tests/BDD/*.feature"
+  ],
+  "language": {
+    "feature": "en"
+  },
+  "unitTestProvider": {
+    "name": "NUnit"
+  },
+  "generator": {
+    "dependencies": {
+      "nunit": "3.13.3"
+    }
+  },
+  "runtime": {
+    "missingOrPendingStepsOutcome": "Inconclusive"
+  }
+}

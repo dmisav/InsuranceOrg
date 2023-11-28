@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 
-namespace InsuranceOrg.Tests;
+namespace InsuranceOrg.Tests.TDD;
 
 [TestFixture]
 public class ClaimControllerTests : ControllerTestsBase
