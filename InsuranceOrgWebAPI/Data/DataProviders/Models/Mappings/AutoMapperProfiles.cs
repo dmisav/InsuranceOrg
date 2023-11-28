@@ -7,7 +7,8 @@ public class AutoMapperProfiles: Profile
 {
     public AutoMapperProfiles()
     {
-        CreateMap<DentalCoverageModel, DentalCoverageViewModel>().ReverseMap();
+        CreateMap<DentalCoverageModel, DentalCoverageViewModel>()
+            .ForMember(dest => dest.DentalCleaningAmount, opt => opt.MapFrom(src => src.DentalCleaningNumber));
         CreateMap<HealthCoverageModel, HealthCoverageViewModel>().ReverseMap();
     }
 }

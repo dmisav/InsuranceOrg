@@ -67,21 +67,21 @@ namespace InsuranceOrgWebAPI.Data.DataProviders
                     new DentalCoverageModel()
                     {
                         CustomerId = new Guid(),
-                        DentalCleaningAmount = 100,
+                        DentalCleaningNumber = 100,
                         OrthodentalAmount = 20,
                         MaxCoverageAmount = 10
                     },
                     new DentalCoverageModel()
                     {
                         CustomerId = new Guid(),
-                        DentalCleaningAmount = 30,
+                        DentalCleaningNumber = 30,
                         OrthodentalAmount = 40,
                         MaxCoverageAmount = 9
                     },
                     new DentalCoverageModel()
                     {
                         CustomerId = new Guid(),
-                        DentalCleaningAmount = 80,
+                        DentalCleaningNumber = 80,
                         OrthodentalAmount = 20,
                         MaxCoverageAmount = 11
                     }
