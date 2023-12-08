@@ -1,6 +1,6 @@
 using InsuranceOrgWebAPI.Models;
 
-namespace InsuranceOrgWebAPI.DataProviders;
+namespace InsuranceOrgWebAPI.Data.DataProviders.Repositories.Interfaces;
 
 public interface ICoverageProvider
 {

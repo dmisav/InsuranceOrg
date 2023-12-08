@@ -1,5 +1,5 @@
 using AutoMapper;
-using InsuranceOrgWebAPI.DataProviders;
+using InsuranceOrgWebAPI.Data.DataProviders.Repositories.Interfaces;
 using InsuranceOrgWebAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

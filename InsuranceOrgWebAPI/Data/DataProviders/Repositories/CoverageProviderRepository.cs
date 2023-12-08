@@ -1,7 +1,7 @@
-using InsuranceOrgWebAPI.DataProviders;
+using InsuranceOrgWebAPI.Data.DataProviders.Repositories.Interfaces;
 using InsuranceOrgWebAPI.Models;
 
-namespace InsuranceOrgWebAPI.Data.DataProviders
+namespace InsuranceOrgWebAPI.Data.DataProviders.Repositories
 {
     public class CoverageProviderRepository: ICoverageProvider
     {
