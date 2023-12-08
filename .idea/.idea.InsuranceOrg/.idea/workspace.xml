@@ -117,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701030015512</updated>
-      <workItem from="1701030016765" duration="44344000" />
+      <workItem from="1701030016765" duration="44855000" />
     </task>
     <servers />
   </component>
@@ -142,19 +142,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/InsuranceOrgWebAPI/Data/DataProviders/Repositories/LocalSystemImageRepository.cs</url>
-          <line>12</line>
-          <properties documentPath="$PROJECT_DIR$/InsuranceOrgWebAPI/Data/DataProviders/Repositories/LocalSystemImageRepository.cs" initialLine="12" containingFunctionPresentation="Method 'UploadAsync'">
-            <startOffsets>
-              <option value="447" />
-            </startOffsets>
-            <endOffsets>
-              <option value="596" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
