@@ -12,6 +12,7 @@ Net 8, Gherkin, html/css
   Blazor / Http Client / OpenApi generated http client
 <br/>
 
+
 -- Auto Rest Client Generation Code. Extra Azure SDK nuget packages are required to be installed
  <br/>
  sudo npm install -g autorest
