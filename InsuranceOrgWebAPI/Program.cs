@@ -33,7 +33,11 @@ builder.Services.AddVersionedApiExplorer(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+    {
+        c.CustomOperationIds(e => $"{e.ActionDescriptor.RouteValues["action"]}");
+    }
+);
 builder.Services.ConfigureOptions<ConfingureSwaggerOptions>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 DependencyMapper.RegisterDependencies(builder);

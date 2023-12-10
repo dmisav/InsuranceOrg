@@ -6,7 +6,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
-
+    <PropertyGroup>
+        <IncludeAzureCoreSharedCode>true</IncludeAzureCoreSharedCode>
+        <IncludeManagementSharedCode>true</IncludeManagementSharedCode>
+    </PropertyGroup>
+    <PropertyGroup>
+        <LangVersion>11.0</LangVersion>
+        <IncludeGeneratorSharedCode>true</IncludeGeneratorSharedCode>
+    </PropertyGroup>
     <ItemGroup>
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
@@ -15,7 +22,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Azure.Core" Version="1.36.0" />
+      <PackageReference Include="Azure.Identity" Version="1.10.4" />
+      <PackageReference Include="Azure.ResourceManager.AppService" Version="1.1.0-beta.4" />
+      <PackageReference Include="Microsoft.Azure.AutoRest.CSharp" Version="3.0.0-beta.20231208.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+      <PackageReference Include="NUnit" Version="4.0.1" />
     </ItemGroup>
 
     <ItemGroup>

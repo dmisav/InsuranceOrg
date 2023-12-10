@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="RegisterAsync(RequestContent,ContentType,RequestContext)">
+      <example>
+This sample shows how to call RegisterAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = null;
+Response response = await client.RegisterAsync(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call RegisterAsync with all parameters and request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(new
+{
+    username = "<username>",
+    password = "<password>",
+    roles = new object[]
+    {
+        "<roles>"
+    },
+});
+Response response = await client.RegisterAsync(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Register(RequestContent,ContentType,RequestContext)">
+      <example>
+This sample shows how to call Register.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = null;
+Response response = client.Register(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Register with all parameters and request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(new
+{
+    username = "<username>",
+    password = "<password>",
+    roles = new object[]
+    {
+        "<roles>"
+    },
+});
+Response response = client.Register(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="PostClaimAsync(RequestContent,ContentType,RequestContext)">
+      <example>
+This sample shows how to call PostClaimAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = null;
+Response response = await client.PostClaimAsync(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PostClaimAsync with all parameters and request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(new
+{
+    date = "2022-05-10T18:57:31.2311892Z",
+    type = "0",
+    issuerName = "<issuerName>",
+    code = "<code>",
+    amount = 1234,
+    otherInfo = "<otherInfo>",
+});
+Response response = await client.PostClaimAsync(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="PostClaim(RequestContent,ContentType,RequestContext)">
+      <example>
+This sample shows how to call PostClaim.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = null;
+Response response = client.PostClaim(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PostClaim with all parameters and request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(new
+{
+    date = "2022-05-10T18:57:31.2311892Z",
+    type = "0",
+    issuerName = "<issuerName>",
+    code = "<code>",
+    amount = 1234,
+    otherInfo = "<otherInfo>",
+});
+Response response = client.PostClaim(content, new ContentType("application/json"));
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="GetProcessedClaimsAsync(RequestContext)">
+      <example>
+This sample shows how to call GetProcessedClaimsAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetProcessedClaimsAsync();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call GetProcessedClaimsAsync with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetProcessedClaimsAsync();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="GetProcessedClaims(RequestContext)">
+      <example>
+This sample shows how to call GetProcessedClaims.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetProcessedClaims();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call GetProcessedClaims with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetProcessedClaims();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="GetPendingClaimsAsync(RequestContext)">
+      <example>
+This sample shows how to call GetPendingClaimsAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetPendingClaimsAsync();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call GetPendingClaimsAsync with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetPendingClaimsAsync();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="GetPendingClaims(RequestContext)">
+      <example>
+This sample shows how to call GetPendingClaims.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetPendingClaims();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call GetPendingClaims with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetPendingClaims();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="UploadImageAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call UploadImageAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(File.OpenRead("<filePath>"));
+Response response = await client.UploadImageAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call UploadImageAsync with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(File.OpenRead("<filePath>"));
+Response response = await client.UploadImageAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="UploadImage(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call UploadImage.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(File.OpenRead("<filePath>"));
+Response response = client.UploadImage(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call UploadImage with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+using RequestContent content = RequestContent.Create(File.OpenRead("<filePath>"));
+Response response = client.UploadImage(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="GetDentalCoverageAsync(RequestContext)">
+      <example>
+This sample shows how to call GetDentalCoverageAsync and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetDentalCoverageAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].ToString());
+]]></code>
+This sample shows how to call GetDentalCoverageAsync with all parameters and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetDentalCoverageAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("maxCoverageAmount").ToString());
+Console.WriteLine(result[0].GetProperty("customerId").ToString());
+Console.WriteLine(result[0].GetProperty("dentalCleaningAmount").ToString());
+Console.WriteLine(result[0].GetProperty("orthodentalAmount").ToString());
+]]></code></example>
+    </member>
+    <member name="GetDentalCoverage(RequestContext)">
+      <example>
+This sample shows how to call GetDentalCoverage and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetDentalCoverage(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].ToString());
+]]></code>
+This sample shows how to call GetDentalCoverage with all parameters and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetDentalCoverage(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("maxCoverageAmount").ToString());
+Console.WriteLine(result[0].GetProperty("customerId").ToString());
+Console.WriteLine(result[0].GetProperty("dentalCleaningAmount").ToString());
+Console.WriteLine(result[0].GetProperty("orthodentalAmount").ToString());
+]]></code></example>
+    </member>
+    <member name="GetHealthCoverageAsync(RequestContext)">
+      <example>
+This sample shows how to call GetHealthCoverageAsync and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetHealthCoverageAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].ToString());
+]]></code>
+This sample shows how to call GetHealthCoverageAsync with all parameters and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetHealthCoverageAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("maxCoverageAmount").ToString());
+Console.WriteLine(result[0].GetProperty("customerId").ToString());
+Console.WriteLine(result[0].GetProperty("massageAllowanceAmount").ToString());
+Console.WriteLine(result[0].GetProperty("chiropractorAllowanceAmunt").ToString());
+]]></code></example>
+    </member>
+    <member name="GetHealthCoverage(RequestContext)">
+      <example>
+This sample shows how to call GetHealthCoverage and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetHealthCoverage(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].ToString());
+]]></code>
+This sample shows how to call GetHealthCoverage with all parameters and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetHealthCoverage(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("maxCoverageAmount").ToString());
+Console.WriteLine(result[0].GetProperty("customerId").ToString());
+Console.WriteLine(result[0].GetProperty("massageAllowanceAmount").ToString());
+Console.WriteLine(result[0].GetProperty("chiropractorAllowanceAmunt").ToString());
+]]></code></example>
+    </member>
+    <member name="GetMimicExceptionAsync(RequestContext)">
+      <example>
+This sample shows how to call GetMimicExceptionAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetMimicExceptionAsync();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call GetMimicExceptionAsync with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = await client.GetMimicExceptionAsync();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="GetMimicException(RequestContext)">
+      <example>
+This sample shows how to call GetMimicException.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetMimicException();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call GetMimicException with all request content.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+VersionedAPIClient client = new VersionedAPIClient(endpoint);
+
+Response response = client.GetMimicException();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

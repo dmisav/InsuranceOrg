@@ -1,6 +1,7 @@
 @page "/claims"
 @using InsuranceOrg.UI.Data
 @using Newtonsoft.Json
+@using insurance
 @attribute [StreamRendering]
 @inject ClaimsDataService claimsDataService
 
@@ -47,10 +48,24 @@ else
     {
         //await Task.Delay(2000);
         HttpClient client = new HttpClient();
-        claims = client.GetFromJsonAsync<List<Claim>>("http://localhost:5112/api/v1/claim/GetProcessedClaims").Result.ToArray();
-        string apiUrl = "http://localhost:5112/api/v1/claim/GetProcessedClaims";
-
-        /*using (HttpClient httpClient = new HttpClient())
+        
+        // Simpliest option to get request
+        //claims = client.GetFromJsonAsync<List<Claim>>("http://localhost:5112/api/v1/claim/GetProcessedClaims").Result.ToArray();
+        
+        /* AutoRest Generated Code  option to get request
+           -- how to generate files 
+           sudo npm install -g autorest
+           autorest --help       
+           autorest --input-file=http://localhost:5112/swagger/v1/swagger.json --csharp --output-folder=InsuranceOrg.UI/Data/OpenApiClient/ --namespace=insurance
+        */
+        string apiUrl = "http://localhost:5112/";
+        VersionedAPIClient vclient = new VersionedAPIClient(new Uri(apiUrl));
+        var response = vclient.GetProcessedClaims();
+        string jsonContent = response.Content.ToString();
+        claims = JsonConvert.DeserializeObject<Claim[]>(jsonContent);
+        
+        /* old fashioned option to run request
+         using (HttpClient httpClient = new HttpClient())
         {
             HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
             response.EnsureSuccessStatusCode();

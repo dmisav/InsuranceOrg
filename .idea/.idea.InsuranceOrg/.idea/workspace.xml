@@ -17,8 +17,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.nuget/packages/microsoft.azure.autorest.csharp/3.0.0-alpha.20230313.1/content/Management.Shared/ManagedServiceIdentityTypeV3Converter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.nuget/packages/microsoft.azure.autorest.csharp/3.0.0-beta.20231208.1/content/Management.Shared/ManagedServiceIdentityTypeV3Converter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/InsuranceOrg.Tests/Tests/TDD/ClaimControllerTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/InsuranceOrg.UI/Components/Pages/Weather.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/InsuranceOrg.UI/Data/ClaimType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/InsuranceOrg.UI/Data/ClaimViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/InsuranceOrg.UI/Data/OpenApiClient/InsuranceClientBuilderExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/InsuranceOrg.UI/Data/OpenApiClient/VersionedAPIClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/InsuranceOrg.UI/Data/OpenApiClient/VersionedAPIClientOptions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/InsuranceOrg.UI/tests/Generated/Samples/Samples_VersionedAPIClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/InsuranceCoverageController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/WeatherForecastController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6dd60ae9e472467f81db6721f07c00dbc400/27/21b48b1b/BadRequest.cs" root0="SKIP_HIGHLIGHTING" />
@@ -29,6 +37,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/03ac07f794a71f728baff7e267a90dee13380a2532e2062c51debe4571217a/ILoggerT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1dad7066d59e42d92476c5ad1180c2b63352d32689dd3d3be2bb2aa26b3bea5/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/327c7021d162488365d0174111f98fe6e72663a8fed3f4c6e4de50a42f253e/ExceptionHandlerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8320f0a545da802633d242d4fde671631f3dbe69ebd5cc64b7c8613c8623e49d/ClientDiagnostics.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
@@ -186,7 +195,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701030015512</updated>
-      <workItem from="1701030016765" duration="59700000" />
+      <workItem from="1701030016765" duration="71104000" />
     </task>
     <servers />
   </component>
@@ -200,43 +209,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/InsuranceOrg.UI/Data/ClaimsDataService.cs</url>
-          <line>12</line>
-          <properties documentPath="$PROJECT_DIR$/InsuranceOrg.UI/Data/ClaimsDataService.cs" initialLine="12" containingFunctionPresentation="Method 'GetClaimsAsync'">
+          <url>file://$PROJECT_DIR$/InsuranceOrg.UI/Data/OpenApiClient/VersionedAPIClient.cs</url>
+          <line>290</line>
+          <properties documentPath="$PROJECT_DIR$/InsuranceOrg.UI/Data/OpenApiClient/VersionedAPIClient.cs" initialLine="290" containingFunctionPresentation="Method 'GetPendingClaims'">
             <startOffsets>
-              <option value="287" />
+              <option value="15025" />
             </startOffsets>
             <endOffsets>
-              <option value="403" />
+              <option value="15112" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/InsuranceOrg.UI/Data/ClaimsDataService.cs</url>
-          <line>15</line>
-          <properties documentPath="$PROJECT_DIR$/InsuranceOrg.UI/Data/ClaimsDataService.cs" initialLine="15" containingFunctionPresentation="Method 'GetClaimsAsync'">
-            <startOffsets>
-              <option value="542" />
-            </startOffsets>
-            <endOffsets>
-              <option value="619" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/ClaimController.cs</url>
-          <line>34</line>
-          <properties documentPath="$PROJECT_DIR$/InsuranceOrgWebAPI/Application/V1/Controllers/ClaimController.cs" initialLine="34" containingFunctionPresentation="Method 'GetProcessedClaims'">
-            <startOffsets>
-              <option value="979" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1004" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceOrgWebAPI.Application.V2.Controllers;
 
-[ApiController]
-[Route("api/v2/[controller]/[action]")]
+//[ApiController]
+// disables this type of routing as bad practice which confuses swagger version json
+//[Route("api/v2/[controller]/[action]")] 
 public class ClaimController : ControllerBase
 {
     private readonly ILogger<ClaimController> _logger;
