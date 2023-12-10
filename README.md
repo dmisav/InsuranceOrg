@@ -7,6 +7,6 @@ Net 8, Gherkin, html/css
   Swagger / DI / Automapper, DTOs / Global exception handling / Custom Action Filters / Global Model Validation / Action based routing / API versioning / JWT authentication / File Upload / TDD (Nunit) / BDD (Specflow) / Cors
 
 <br/>
-<b>Web UI </b>
+<strong>Web UI </strong>
 <br/>
   Blazor / Http Client
