@@ -2,21 +2,15 @@
 
 Net 8, Gherkin, html/css
 
-<b><mark> Web API </mark></b> 
- <br/>
+<b>Web API</b>   
   Swagger / DI / Automapper, DTOs / Global exception handling / Custom Action Filters / Global Model Validation / Action based routing / API versioning / JWT authentication / File Upload / TDD (Nunit) / BDD (Specflow) / Cors
 
-<br/>
-<b><cite> Web UI </cite></b> 
-<br/>
-  Blazor / Http Client / OpenApi generated http client
-<br/>
+<b>Web UI</b>    
+  Blazor / Http Client / OpenApi generated http client  
+ 
+/* <i>Auto Rest Client Generation Code. Extra Azure SDK nuget packages are required to be installed </i>    
 
-
--- Auto Rest Client Generation Code. Extra Azure SDK nuget packages are required to be installed
- <br/>
- sudo npm install -g autorest
- <br/>
- autorest --help       
- <br/>
- autorest --input-file=http://localhost:5112/swagger/v1/swagger.json --csharp --output-folder=InsuranceOrg.UI/Data/OpenApiClient/ --namespace=insurance
+ sudo npm install -g autorest   
+ autorest --help    
+ autorest --input-file=http://localhost:5112/swagger/v1/swagger.json --csharp --output-folder=InsuranceOrg.UI/Data/OpenApiClient/ --namespace=insurance  
+*/   
