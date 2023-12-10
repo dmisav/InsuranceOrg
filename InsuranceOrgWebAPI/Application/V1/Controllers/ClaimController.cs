@@ -32,14 +32,21 @@ public class ClaimController : ControllerBase
     [ActionName("GetProcessedClaims")]
     public IActionResult GetProcessedClaims()
     {
-        var res = new ClaimViewModelV1()
-        {
+        ClaimViewModelV1[] res = {
+            new() {
             Amount = 10,
             Date = DateTime.Now,
             Code = "xyz",
             IssuerName = "me",
             Type = ClaimType.Health,
-            OtherInfo = "blah"
+            OtherInfo = "blah" },
+            new() {
+                Amount = 11,
+                Date = DateTime.Now,
+                Code = "abc",
+                IssuerName = "someone",
+                Type = ClaimType.Health,
+                OtherInfo = "blah"}
         };
         return Ok(res);
     }

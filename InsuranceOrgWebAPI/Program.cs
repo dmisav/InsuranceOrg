@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -36,6 +37,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureOptions<ConfingureSwaggerOptions>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 DependencyMapper.RegisterDependencies(builder);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(Constants.CorsAllowSpecificOrigin,
+        builder => builder.WithOrigins("http://localhost:5129/claims")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters()
@@ -79,14 +87,19 @@ if (app.Environment.IsDevelopment())
 }
 app.UseMiddleware<ActionExceptionHandlerMiddleware>();
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
 app.UseStaticFiles(new StaticFileOptions()
 {
     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "ImagesStore")),
     RequestPath = "/Images"
     // allows to Access static files from "http://localhost:5112/Images/d.jpg"
 });
+app.UseRouting();
+
+app.UseCors(Constants.CorsAllowSpecificOrigin);
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

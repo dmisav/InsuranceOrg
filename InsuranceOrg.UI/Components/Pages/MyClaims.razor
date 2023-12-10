@@ -1,0 +1,61 @@
+@page "/claims"
+@using InsuranceOrg.UI.Data
+@using Newtonsoft.Json
+@attribute [StreamRendering]
+@inject ClaimsDataService claimsDataService
+
+<PageTitle>My Processed claims</PageTitle>
+<h1>My processed claims</h1>
+
+@if (claims == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Amount ($)</th>
+            <th>Code</th>
+            <th>IssuerName</th>
+            <th>Summary</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var claim in claims)
+        {
+            <tr>
+                <td>@claim.Date.ToShortDateString()</td>
+                <td>@claim.Amount</td>
+                <td>@claim.Code</td>
+                <td>@claim.IssuerName</td>
+                <td>@claim.OtherInfo</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Claim[] claims;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //await Task.Delay(2000);
+        HttpClient client = new HttpClient();
+        claims = client.GetFromJsonAsync<List<Claim>>("http://localhost:5112/api/v1/claim/GetProcessedClaims").Result.ToArray();
+        string apiUrl = "http://localhost:5112/api/v1/claim/GetProcessedClaims";
+
+        /*using (HttpClient httpClient = new HttpClient())
+        {
+            HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+            response.EnsureSuccessStatusCode();
+            string jsonContent = await response.Content.ReadAsStringAsync();
+            claims = JsonConvert.DeserializeObject<Claim[]>(jsonContent);
+        }*/
+    }
+}

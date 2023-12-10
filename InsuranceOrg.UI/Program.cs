@@ -1,10 +1,13 @@
 using InsuranceOrg.UI.Components;
+using InsuranceOrg.UI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddSingleton<ClaimsDataService>();
+//builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

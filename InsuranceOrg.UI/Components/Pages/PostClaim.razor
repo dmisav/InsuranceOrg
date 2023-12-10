@@ -1,0 +1,20 @@
+﻿@page "/postaclaim"
+@rendermode InteractiveServer
+
+<PageTitle>Post a claim</PageTitle>
+
+<h1>Post a claim</h1>
+
+<p role="status">Claims count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Add</button>
+
+@code {
+    private int currentCount = 0;
+    // TODO add api call to post claims
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+}
